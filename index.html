@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Anniversary Shalu ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #81293f, #ff4d6d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            overflow: hidden;
+            height: 100vh;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+            width: 350px;
+            height: auto;
+            margin: 20px;
+            padding: 10px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* 📝 Text */
+        h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+
+        
+        button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+            background: #ff2e63;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff4d6d;
+        }
+
+        .couple-img {
+            margin-top: 15px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff4d6d;
+            box-shadow: 0 0 20px pink;
+        }
+
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+       
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            color: red;
+            animation: floatUp linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.6);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
+
+            .couple-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+      
+        @media (max-width: 768px) {
+            .card {
+                max-width: 90%;
+            }
+
+            .couple-img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" id="main">
+        <h1>💖 Happy Anniversary Shalu 💖</h1>
+        <p>Aaj ka din bohot special hai 🎉</p>
+        <p>Kyuki aaj humari beautiful journey ka ek aur saal complete hua 💕</p>
+        <p>Har moment tumhare saath perfect lagta hai 😊</p>
+
+        <button onclick="next()">Click for Surprise 🎁</button>
+    </div>
+
+    <script>
+        function next() {
+            document.getElementById("main").innerHTML = `
+                <h1>✨ Our Beautiful Journey ✨</h1>
+                <p>Shalu ❤️</p>
+                <p>Jab se tum meri life me aayi ho...</p>
+                <p>Sab kuch aur bhi khoobsurat ho gaya 💫</p>
+                <p>Tum meri har khushi ki wajah ho 😊</p>
+                <p>Meri har dua me sirf tum ho 💖</p>
+                <p>Aur aaj main bas itna kehna chahta hoon...</p>
+
+                <button onclick="final()">Last Surprise 💞</button>
+            `;
+        }
+
+        function final() {
+            document.getElementById("main").innerHTML = `
+                <h1>💞 Forever Us 💞</h1>
+
+                <img src="shalu.png" alt="Couple Image" class="couple-img" />
+
+                <h2>Happy Anniversary ❤️</h2>
+
+                <p>Meri pyaari Shalu 💖</p>
+                <p>Tum meri life ka sabse khoobsurat hissa ho ✨</p>
+                <p>Tumhare bina sab kuch adhura sa lagta hai 💔</p>
+                <p>Main promise karta hoon ki hamesha tumhara saath dunga ❤️</p>
+                <p>Har mushkil, har khushi... sab kuch saath me bitayenge 💑</p>
+
+                <h2>❤️ I Love You Forever ❤️</h2>
+            `;
+        }
+
+        /* ❤️ Floating Hearts */
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 200);
+    </script>
+
+</body>
+
+</html>
